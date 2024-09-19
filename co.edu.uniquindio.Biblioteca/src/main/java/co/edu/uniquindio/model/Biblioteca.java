@@ -56,6 +56,14 @@ public class Biblioteca implements ICrudBibliotecario {
         return false;
     }
 
+    /**
+     * 
+     * @param libroPrestamo
+     * @param miembroPrestamo
+     * @param fechaPrestamo
+     * @param fechaDevolucion
+     * @return
+     */
     @Override
     public boolean modificarPrestamo(Libro libroPrestamo, Miembro miembroPrestamo, LocalDate fechaPrestamo, LocalDate fechaDevolucion) {
         for (Prestamo prestamo : listPrestamos) {
@@ -64,6 +72,7 @@ public class Biblioteca implements ICrudBibliotecario {
                     prestamo.getFechaPrestamo().equals(fechaPrestamo)) {
 
                 prestamo.setFechaDevolucion(fechaDevolucion);
+
                 return true;
             }
         }
